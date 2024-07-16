@@ -12,20 +12,22 @@ const Cards = () => {
     return (
         <>
             {tasks.map((task) => (
-                <Card key={task.id} className="p-0 mb-2">
+                <Card key={task.id} className="p-0 mb-2" style={{position: 'relative'}}>
                     <p className={`ml-2 ${task.completed ? 'line-through' : ''}`}>
                         {task.title}
                     </p>
                     <div className="flex align-items-center">
-
+                        <span className="me-1">Status</span>
                         <Checkbox
                             checked={task.completed}
                             onChange={() => dispatch(toggleTaskStatus(task))}
                         />
-                        <Button
-                            className="p-button-danger ms-5"
-                            onClick={() => dispatch(deleteTask(task.id))}
-                        >Delete</Button>
+                       <div style={{position: 'absolute', right: '50px', bottom: '10px'}}>
+                           <Button
+                               className="p-button-danger ms-5"
+                               onClick={() => dispatch(deleteTask(task.id))}
+                           >Delete</Button>
+                       </div>
                     </div>
                 </Card>
             ))}

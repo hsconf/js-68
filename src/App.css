@@ -1,0 +1,13 @@
+._top {
+    height: calc(100vh - 150px);
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+._bottom {
+    position: fixed;
+    bottom: 20px;
+    left: 120px;
+    right: 120px;
+    background: white;
+}
